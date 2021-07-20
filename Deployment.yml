@@ -1,0 +1,16 @@
+---
+- hosts: 
+  become: yes
+  tasks: 
+    
+  - name: download artifacts
+    get_url: 
+      url: 
+      dest: /usr/share/tomcat
+      url_username: jaga
+      url_password: jaga
+      
+  - name: restart tomcat
+    systemd: 
+      name: tomcat
+      state: restarted
