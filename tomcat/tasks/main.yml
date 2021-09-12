@@ -18,9 +18,18 @@
   template:
     src: tomcat-users.xml
     dest: /usr/share/tomcat/conf
-
-- name: start tomcat
-  systemd:
-    name: tomcat
-    state: restarted
+    notify: restart tomcat
+    
+- name: download artifacts
+  get_url: 
+    url: http://3.16.135.251:8081/nexus/service/local/repositories/jaga/content/hello/hello-world/5/hello-world-5.war
+    dest: /usr/share/tomcat/webapps
+    url_username: jaga
+    url_password: jaga
+    
+handlers:
+  - name: restart tomcat
+    systemd:
+      name: tomcat
+      state: restarted
 # tasks file for tomcat
