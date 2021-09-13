@@ -1,4 +1,4 @@
 ---
-nexus_url: http://3.16.135.251:8081/nexus/service/local/repositories/jaga/content/jaggu/java/$1/java-$1.war
+nexus_url: http://3.16.135.251:8081/nexus/service/local/repositories/jaga/content/jaggu/java/13/java-13.war
 webapps: /usr/share/tomcat/webapps
 # vars file for tomcat
