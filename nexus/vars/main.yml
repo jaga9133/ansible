@@ -1,0 +1,6 @@
+---
+jdk: openjdk-8-jdk
+nexus_url: https://download.sonatype.com/nexus/oss/nexus-latest-bundle.tar.gz
+nexus_package: nexus-2.14.20-02-bundle.tar.gz
+
+# vars file for nexus

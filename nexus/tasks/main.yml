@@ -1,0 +1,28 @@
+---
+- name: install jdk
+  apt:
+    name: "{{ jdk }}"
+    state: present
+
+- name: download nexus
+  get_url:
+    url: "{{ nexus_url }}"
+    dest: /home/jaga
+
+- name: change permissions
+  command: chmod 777 {{ nexus_package }}
+  args:
+    chdir: /home/jaga
+
+- name: extract nexus
+  unarchive:
+    src: /home/jaga/{{ nexus_package }}
+    dest: /home/jaga
+    remote_src: yes
+
+- name: start nexus
+  command: ./nexus start
+  become_user: jaga
+  args:
+    chdir: /home/jaga/nexus-2.14.20-02/bin
+# tasks file for nexus
