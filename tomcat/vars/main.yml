@@ -1,2 +1,4 @@
 ---
+nexus_url: http://3.16.135.251:8081/nexus/service/local/repositories/jaga/content/jaggu/java/$version/java-$version.war
+webapps: /usr/share/tomcat/webapps
 # vars file for tomcat
